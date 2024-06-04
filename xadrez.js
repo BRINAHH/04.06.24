@@ -445,7 +445,14 @@ function moverPeca(pecaAnalisada, pecaClicada, elementoDestino) {
 
             if (elementoDestino.tagName == "IMG" || elementoDestino.tagName == "img") {
                 let quadranteDestino = event.target.parentElement; 
-        //aqui         if (coluna_do_destino == coluna_da_peca) {
+                if (corPermitida != pecas[elementoDestino.dataset.indexNumber].cor) {
+                    if (corPermitida == cor1) {
+                        pecasVencidasBrancas.innerHTML += quadranteDestino.innerHTML;
+                    }else{
+                        pecasVencidasPretas.innerHTML += quadranteDestino.innerHTML; 
+                }
+                quadranteDestino.innerHTML = 
+                //aqui         if (coluna_do_destino == coluna_da_peca) {
         //cole            if (corPermitida == cor1) {
         //em                 pecasVencidasBrancas.innerHTML += elementoDestino.parentElement.innerHTML;
         //outro            } else {
